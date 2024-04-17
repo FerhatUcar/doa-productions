@@ -11,23 +11,69 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-rgb: 28, 28, 28;
+    --background-end-rgb: 28, 28, 28;
   }
+}
+.navbar {
+  background-color: rgb(23, 23, 23);
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+          to bottom,
+          transparent,
+          rgb(var(--background-end-rgb))
+  )
+  rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@font-face {
+  font-family: "HeadFont";
+  src: url("../fonts/Poppins-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "ParagraphFont";
+  src: url("../fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+h1, h3 {
+  font-family: "HeadFont", sans-serif;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.center-content {
+  display: flex; /* Enable flexbox for mobile */
+  justify-content: flex-start; /* Left-align content on mobile */
+  align-items: center; /* Center vertically on mobile */
+  margin-top: 3rem;
+
+  @media (min-width: 640px) { /* Target screens wider than 640px */
+    position: absolute; /* Absolute positioning for desktop */
+    top: 50%; /* Center vertically on desktop */
+    left: 50%; /* Left-align on desktop */
+    transform: translate(-50%, -50%); /* Shift content up by half its height for vertical centering */
+    text-align: center;
+    max-width: 1200px;
   }
 }
+
+
+

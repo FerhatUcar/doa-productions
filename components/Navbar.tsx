@@ -31,7 +31,7 @@ const Navbar = () => {
           height={90}
           className="cursor-pointer hover:scale-110 transition"
         />
-        <button onClick={handleMenu}>
+        <button className="hover:scale-110 transition" onClick={handleMenu}>
           <AlignJustify />
         </button>
       </div>
@@ -42,13 +42,13 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <div className="bg-zinc-800 fixed inset-0 h-screen p-2 z-20 transition-all">
-            <button className="float-right mb-3 mr-3" onClick={handleMenu}>
+          <div className="bg-zinc-900 fixed inset-0 h-screen p-2 z-20 transition-all">
+            <button className="float-right m-3" onClick={handleMenu}>
               <X />
             </button>
             {links.map(({ href, label }) => (
               <Link href={href} key={href} onClick={handleMenuItem}>
-                <button className="py-4 flex flex-row items-center justify-center gap-2 w-full h-32 hover:bg-zinc-700 transition-all">
+                <button className="py-4 flex flex-row items-center justify-center gap-2 w-full h-32 hover:bg-custom-bg-color hover:scale-110 transition-all">
                   <h2 className="uppercase text-xl font-black">{label}</h2>
                 </button>
               </Link>
